@@ -3,7 +3,9 @@
  * PRICE RANGE
  * -------------------------------------------------------------
  */
-
+.facets__price {
+  display: none;
+}
 .price-range {
   display: block;
   padding-top: 5px;

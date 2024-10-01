@@ -158,7 +158,20 @@
 .range-group .range:last-child:is(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
   right: 0;
 }
-
+.price-range .price-range-label .field__label[for="From"] {
+    position: initial;
+    font-size: 1rem;
+}
+.price-range .price-range-label .field__label[for="To"] {
+    position: initial;
+    font-size: 1rem;
+}
+.price-range .price-range-label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+}
 @media not screen and (pointer: fine) {
   /* On non-touch device the thumb are bigger so we need to adjust the spacing */
   .price-range {

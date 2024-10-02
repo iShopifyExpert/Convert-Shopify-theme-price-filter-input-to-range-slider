@@ -3,9 +3,7 @@
  * PRICE RANGE
  * -------------------------------------------------------------
  */
-.facets__price {
-  display: none;
-}
+
 .price-range {
   display: block;
   padding-top: 5px;
@@ -40,21 +38,17 @@
   background: none;
   width: 100%;
 }
-
-.range::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-
 .range::-webkit-slider-thumb {
   background: rgb(var(--background));
   cursor: pointer;
   z-index: 1;
-  box-shadow: 0 0 0 5px rgb(var(--text-color)) inset;
+  -webkit-appearance: none;
+  box-shadow: 0 0 0 5px rgb(40, 40, 40) inset;
   border: none;
   border-radius: 100%;
   width: 14px;
   height: 14px;
-  margin-top: -5px;
+  margin-top: -10px;
   position: relative;
 }
 
@@ -70,7 +64,7 @@
 .range::-moz-range-thumb {
   background: rgb(var(--background));
   cursor: pointer;
-  box-shadow: 0 0 0 5px rgb(var(--text-color)) inset;
+  box-shadow: 0 0 0 5px rgb(40, 40, 40) inset;
   border: none;
   border-radius: 100%;
   width: 14px;
@@ -94,7 +88,7 @@
 }
 
 .range::-moz-range-progress {
-  background-color: rgba(var(--text-color), .7);
+  background-color: rgba(40, 40, 40, .7);
 }
 
 .range::-moz-range-track {
@@ -103,21 +97,21 @@
 
 @media screen and not (pointer: fine) {
   .range::-webkit-slider-thumb {
-    box-shadow: 0 0 0 7px rgb(var(--text-color)) inset;
+    box-shadow: 0 0 0 7px rgb(40, 40, 40) inset;
     width: 20px;
     height: 20px;
     margin-top: -7px;
   }
 
   .range::-moz-range-thumb {
-    box-shadow: 0 0 0 7px rgb(var(--text-color)) inset;
+    box-shadow: 0 0 0 7px rgb(40, 40, 40) inset;
     width: 20px;
     height: 20px;
   }
 }
 
 .range-group {
-  background: linear-gradient(to var(--transform-origin-end), rgb(var(--border-color)) var(--range-min), rgba(var(--text-color), .7) var(--range-min), rgba(var(--text-color), .7) var(--range-max), rgb(var(--border-color)) var(--range-max));
+  background: linear-gradient(to right, rgb(223, 223, 223) var(--range-min), rgba(40, 40, 40, .7) var(--range-min), rgba(40, 40, 40, .7) var(--range-max), rgb(223, 223, 223) var(--range-max));
   border-radius: 4px;
   height: 6px;
 }
@@ -160,19 +154,38 @@
 .range-group .range:last-child:is(:lang(ae), :lang(ar), :lang(arc), :lang(bcc), :lang(bqi), :lang(ckb), :lang(dv), :lang(fa), :lang(glk), :lang(he), :lang(ku), :lang(mzn), :lang(nqo), :lang(pnb), :lang(ps), :lang(sd), :lang(ug), :lang(ur), :lang(yi)) {
   right: 0;
 }
-.price-range .price-range-label .field__label[for="From"] {
-    position: initial;
-    font-size: 1rem;
+.price-range-slider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
 }
-.price-range .price-range-label .field__label[for="To"] {
-    position: initial;
-    font-size: 1rem;
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: calc(100% - -1px);
+  margin: 2px 0px 0;
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
 }
-.price-range .price-range-label {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 8px;
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #333;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #333;
+  cursor: pointer;
+  border-radius: 50%;
 }
 @media not screen and (pointer: fine) {
   /* On non-touch device the thumb are bigger so we need to adjust the spacing */
